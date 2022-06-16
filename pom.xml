@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<!-- See https://github.com/gantsign/maven-parent-poms -->
+		<groupId>com.github.gantsign.parent</groupId>
+		<artifactId>java-parent</artifactId>
+		<!-- For Java 11 use the following alternate parent artifact ID -->
+		<!-- <artifactId>java-parent</artifactId> -->
+		<version>2.15.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.rajagopalan</groupId>
+	<artifactId>efforttracker</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- Maven Enforcer check -->
+		<enforcer.skip>false</enforcer.skip>
+
+		<!-- JaCoCo code coverage check -->
+		<jacoco.file.minimum-coverage-ratio>0.75</jacoco.file.minimum-coverage-ratio>
+		<jacoco.skip>false</jacoco.skip>
+
+		<java.require.version>[11,12)</java.require.version>
+		<java.target.version>11</java.target.version>
+
+		<!-- Check dependencies are used, declared and have the correct scope -->
+		<mdep.analyze.skip>false</mdep.analyze.skip>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-guava</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<!-- Don't inherit license from parent POM -->
+	<licenses>
+		<license>
+			<name>TODO</name>
+		</license>
+	</licenses>
+
+	<!-- Don't inherit developers from parent POM -->
+	<developers>
+		<developer>
+			<name>TODO</name>
+		</developer>
+	</developers>
+
+	<inceptionYear>${package.getClass().forName("java.time.LocalDate").now().getYear()}</inceptionYear>
+
+	<organization>
+		<name>Rajagopalan</name>
+	</organization>
+
+</project>

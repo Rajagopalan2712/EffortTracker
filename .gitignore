@@ -1,0 +1,9 @@
+**/logs
+target/*
+*.class
+/target/
+.classpath
+.editorconfig
+.idea/
+.project
+.settings
